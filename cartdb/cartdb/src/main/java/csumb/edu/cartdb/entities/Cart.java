@@ -3,11 +3,11 @@ import csumb.edu.cartdb.entities.Product;
 
 
 public class Cart{
-    private String s1;
+    private String id;
     private Product p1;
 
-    public Cart (String s1,Product p1){
-        this.s1 = s1;
+    public Cart (String id,Product p1){
+        this.id = id;
         this.p1=p1;
     }
 
@@ -19,10 +19,10 @@ public class Cart{
     }
 
     /**
-     * @param s1 the s1 to set
+     * @param id the s1 to set
      */
-    public void setS1(String s1) {
-        this.s1 = s1;
+    public void setid(String id) {
+        this.id = id;
     }
 
     /**
@@ -35,7 +35,7 @@ public class Cart{
     /**
      * @return the s1
      */
-    public String getS1() {
-        return s1;
+    public String getid() {
+        return id;
     }
 }
