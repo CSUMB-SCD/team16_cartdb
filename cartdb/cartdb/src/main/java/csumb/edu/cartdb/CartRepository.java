@@ -6,13 +6,8 @@ import csumb.edu.cartdb.entities.Cart;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CartRepository extends MongoRepository<Cart, String> {
-    
-    //Optional<Cart> findById(String id);   
+public interface CartRepository extends MongoRepository<Cart, String> {  
 
     @Query (value = "{'s1':'?0'}")
-    Cart findId(String s1);
-
-    // @Query (value = "{'id':'?0'}")
-    // List<Cart> findAll();
+    List<Cart> findId(String s1);
 }
