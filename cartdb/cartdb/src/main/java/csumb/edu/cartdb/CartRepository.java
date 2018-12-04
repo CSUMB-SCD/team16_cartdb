@@ -12,8 +12,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface CartRepository extends MongoRepository<Cart, String> {
     
     Optional<Cart> findById(String id);   
-     
-    @Query (value = "{'id':'?0'}")
+
+    @Query (value = "{'s1':'?0'}")
     Cart findId(String id);
 
     // @Query (value = "{'id':'?0'}")
