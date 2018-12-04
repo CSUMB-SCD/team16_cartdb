@@ -46,10 +46,10 @@ public class CartController{
 		return cartObj;
     }
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping(path="/delete/{id}")
-	public void deletebyID(@PathVariable String id) {
+    @GetMapping(path="/delete/{s1}")
+	public void deletebyID(@PathVariable String s1) {
  
-		cartRepo.deleteById(id);
+		cartRepo.deleteById(s1);
      }
      @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path="/delete")
