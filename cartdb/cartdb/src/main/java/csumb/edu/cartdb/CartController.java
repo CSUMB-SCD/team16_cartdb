@@ -46,13 +46,13 @@ public class CartController{
 		return cartObj;
     }
     @CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping(path="/delete/{id}")
+    @GetMapping(path="/delete/{id}")
 	public void deletebyID( String id) {
  
 		cartRepo.deleteById(id);
      }
      @CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping(path="/delete")
+    @GetMapping(path="/delete")
 	public void deleteAllcart() {
  
 		cartRepo.deleteAll();
