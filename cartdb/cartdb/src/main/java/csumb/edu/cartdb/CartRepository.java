@@ -4,6 +4,8 @@ import org.springframework.data.mongodb.repository.Query;
 
 import csumb.edu.cartdb.entities.Cart;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CartRepository extends MongoRepository<Cart, String> {  
