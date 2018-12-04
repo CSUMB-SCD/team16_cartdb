@@ -6,9 +6,9 @@ public class Cart{
     private String s1;
     private Product p1;
 
-    public Cart (String s1,Product product){
+    public Cart (String s1,Product p1){
         this.s1 = s1;
-        this.p1=product;
+        this.p1=p1;
     }
 
     /**

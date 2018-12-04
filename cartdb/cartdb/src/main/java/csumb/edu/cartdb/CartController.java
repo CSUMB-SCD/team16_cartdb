@@ -54,7 +54,7 @@ public class CartController{
     }
     
     @DeleteMapping("/cart/delete")
-	public ResponseEntity<String> deleteAllCustomers() {
+	public ResponseEntity<String> deleteAllcart() {
  
 		cartRepo.deleteAll();
  
