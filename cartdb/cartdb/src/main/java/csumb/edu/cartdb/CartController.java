@@ -39,7 +39,7 @@ public class CartController{
         return result;
     }  
 
-    @PutMapping("/create/{userid}")
+    @PutMapping("/cart/create/{userid}")
 	public Cart createCart(@PathVariable String userid, @RequestBody Product product ) {
 		Cart cartObj = cartRepo.save(new Cart(userid, new Product(product.getId(),product.getImage(),product.getName(),product.getDescription(), product.getStockNum(),product.getPayment())));
 		return cartObj;
