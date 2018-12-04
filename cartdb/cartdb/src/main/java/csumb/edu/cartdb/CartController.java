@@ -46,19 +46,16 @@ public class CartController{
     }
     
     @DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deletebyID( String id) {
+	public void deletebyID( String id) {
  
 		cartRepo.deleteById(id);
- 
-		return new ResponseEntity<>("Product has been removed!", HttpStatus.OK);
-    }
+     }
     
     @DeleteMapping("/delete")
-	public ResponseEntity<String> deleteAllcart() {
+	public void deleteAllcart() {
  
 		cartRepo.deleteAll();
- 
-		return new ResponseEntity<>("", HttpStatus.OK);
+
     }
 
 }
