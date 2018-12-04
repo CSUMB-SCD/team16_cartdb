@@ -47,7 +47,7 @@ public class CartController{
     }
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(path="/delete/{s1}")
-	public void deletebyID( String s1) {
+	public void deletebyID(@PathVariable String s1) {
  
 		cartRepo.deleteById(s1);
      }
