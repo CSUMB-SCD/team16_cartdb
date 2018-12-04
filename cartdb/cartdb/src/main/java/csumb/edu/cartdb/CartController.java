@@ -40,19 +40,19 @@ public class CartController{
     }  
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @PutMapping("/cart/create/{userid}")
+    @PutMapping(path= "/cart/create/{userid}")
 	public Cart createCart(@PathVariable String userid, Product product ) {
 		Cart cartObj = cartRepo.save(new Cart(userid, new Product(product.getId(),product.getImage(),product.getName(),product.getDescription(), product.getStockNum(),product.getPayment())));
 		return cartObj;
     }
     @CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping(path="/delete/{id}")
 	public void deletebyID( String id) {
  
 		cartRepo.deleteById(id);
      }
      @CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping("/delete")
+    @DeleteMapping(path="/delete")
 	public void deleteAllcart() {
  
 		cartRepo.deleteAll();
