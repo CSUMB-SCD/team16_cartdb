@@ -34,14 +34,14 @@ public class CartController{
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/cart/{id}")
-    public Cart getProductId (@PathVariable String id) {
-        Cart result = cartRepo.findId(id);
+    public List<Cart> getProductId(@PathVariable String id) {
+        List<Cart> result = cartRepo.findId(id);
         return result;
     }  
 
     @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping(path= "/cart/create/{userid}")
-	public Cart createCart(@PathVariable String userid, Product product ) {
+	public Cart createCart(@PathVariable String userid, @RequestBody Product product ) {
 		Cart cartObj = cartRepo.save(new Cart(userid, new Product(product.getId(),product.getImage(),product.getName(),product.getDescription(), product.getStockNum(),product.getPayment())));
 		return cartObj;
     }
