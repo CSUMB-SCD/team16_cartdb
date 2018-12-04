@@ -1,4 +1,5 @@
 package csumb.edu.cartdb.entities;
+import csumb.edu.cartdb.entities.Product;
 
 
 public class Cart{
