@@ -40,13 +40,13 @@ public class CartController{
     }  
 
     @PutMapping("/create/{userid}")
-	public Cart createCart(@RequestBody String userid, @RequestBody Product product ) {
+	public Cart createCart(@PathVariable - String userid, @RequestBody Product product ) {
 		Cart cartObj = cartRepo.save(new Cart(userid, new Product(product.getId(),product.getImage(),product.getName(),product.getDescription(), product.getStockNum(),product.getPayment())));
 		return cartObj;
     }
     
     @DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deletebyID(@PathVariable("id") String id) {
+	public ResponseEntity<String> deletebyID(@PathVariable String id) {
  
 		cartRepo.deleteById(id);
  
