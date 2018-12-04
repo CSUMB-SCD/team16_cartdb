@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CartdbApplication",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "csumb.edu.cartdb.CartdbApplication",
+            "args": "",
+            "projectName": "cartdb"
+        }
+    ]
+}
