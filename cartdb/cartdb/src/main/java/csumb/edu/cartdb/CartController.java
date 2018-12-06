@@ -53,6 +53,7 @@ public class CartController{
 	public Cart deleteItem(@PathVariable String s1, @PathVariable String p1) {
  
         Cart cart = cartRepo.deleteItem(s1,p1);
+        //cartRepo.delete(cart);
         return cart;
      }
      @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
