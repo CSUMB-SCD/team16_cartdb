@@ -36,7 +36,7 @@ public class CartController{
     }  
 
     @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
-    @PutMapping(path= "/cart/create/{userid}/{productid}")
+    @GetMapping(path= "/cart/create/{userid}/{productid}")
 	public Cart createCart(@PathVariable String userid, @PathVariable String productid) {
 		Cart cartObj = cartRepo.save(new Cart(userid, productid));
 		return cartObj;

@@ -13,6 +13,6 @@ public interface CartRepository extends MongoRepository<Cart, String> {
     @Query (value = "{'s1':'?0'}")
     List<Cart> findId(String s1);
 
-    @Query ("{'s1' : ?0},{'p1': ?0}")
+    @Query ("{'s1' : ?0}, {'p1': ?0}")
 	Cart deleteItem(String s1, String p1);
 }
