@@ -10,14 +10,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import csumb.edu.cartdb.entities.Cart;
-import csumb.edu.cartdb.entities.Product;
-import csumb.edu.cartdb.entities.User;
 
 
 @RestController
@@ -25,33 +21,40 @@ public class CartController{
     @Autowired
     CartRepository cartRepo;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/cart")
     public List<Cart> getAll(){
        List<Cart> result = cartRepo.findAll();
        return result;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/cart/{id}")
-    public List<Cart> getProductId(@PathVariable String id) {
+    public List<Cart> getCartId(@PathVariable String id) {
         List<Cart> result = cartRepo.findId(id);
         return result;
     }  
 
-    @CrossOrigin(origins = "http://localhost:4200")
-    @PutMapping(path= "/cart/create/{userid}")
-	public Cart createCart(@PathVariable String userid, @RequestBody Product product ) {
-		Cart cartObj = cartRepo.save(new Cart(userid, new Product(product.getId(),product.getImage(),product.getName(),product.getDescription(), product.getStockNum(),product.getPayment())));
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
+    @PutMapping(path= "/cart/create/{userid}/{productid}")
+	public Cart createCart(@PathVariable String userid, @PathVariable String productid) {
+		Cart cartObj = cartRepo.save(new Cart(userid, productid));
 		return cartObj;
     }
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping(path="/delete/{s1}")
 	public void deletebyID(@PathVariable String s1) {
  
 		cartRepo.deleteById(s1);
      }
-     @CrossOrigin(origins = "http://localhost:4200")
+
+    //  @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
+    // @GetMapping(path="/delete/{s1}/{p1}")
+	// public void deleteItem(@PathVariable String s1, @PathVariable String p1) {
+ 
+	// 	cartRepo.deleteItem(s1,p1);
+    //  }
+     @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping(path="/delete")
 	public void deleteAllcart() {
  
