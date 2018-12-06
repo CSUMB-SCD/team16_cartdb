@@ -48,12 +48,13 @@ public class CartController{
 		cartRepo.deleteById(s1);
      }
 
-    //  @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
-    // @GetMapping(path="/delete/{s1}/{p1}")
-	// public void deleteItem(@PathVariable String s1, @PathVariable String p1) {
+    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
+    @GetMapping(path="/delete/{s1}/{p1}")
+	public Cart deleteItem(@PathVariable String s1, @PathVariable String p1) {
  
-	// 	cartRepo.deleteItem(s1,p1);
-    //  }
+        Cart cart = cartRepo.deleteItem(s1,p1);
+        return cart;
+     }
      @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping(path="/delete")
 	public void deleteAllcart() {
